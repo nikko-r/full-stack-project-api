@@ -1,23 +1,15 @@
 package com.example.fullstackprojectapi;
 
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+
 import java.io.FileNotFoundException;
-import java.util.Timer;
-import java.util.TimerTask;
 
-import static com.example.fullstackprojectapi.CSVDataLoader.updateSQL;
+@Component
 
-class UpdateSGLTimer {
-	public static void main(String[] args) {
-		Timer timer = new Timer();
-		timer.schedule(new TimerTask() {
-		  @Override
-		  public void run() {
-			  try {
-				  updateSQL();
-			  } catch (FileNotFoundException e) {
-				  throw new RuntimeException(e);
-			  }
-		  }
-		}, 0, 1000);//wait 0 milliseconds before doing the action and do it every 1000ms (1 second)
+public class UpdateSGLTimer {
+	@Scheduled(fixedRate = 60000)
+	public void timer() throws FileNotFoundException {
+		CSVDataLoader.updateSQL();
 	}
 }
