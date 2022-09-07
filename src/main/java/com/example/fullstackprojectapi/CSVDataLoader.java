@@ -42,8 +42,8 @@ public class CSVDataLoader {
             dataValues.add(Integer.parseInt(c));
         });
 
-        var csvData = new CSVData(
-                1L,
+        CSVData csvData = new CSVData(
+                0,
                 convertToDateTime,
                 mrh,
                 cpm,
