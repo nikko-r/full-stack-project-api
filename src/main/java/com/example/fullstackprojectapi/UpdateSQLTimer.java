@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 
 @Component
 
-public class UpdateSGLTimer {
+public class UpdateSQLTimer {
 	@Scheduled(fixedRate = 60000)
 	public void timer() throws FileNotFoundException {
 		CSVDataLoader.updateSQL();

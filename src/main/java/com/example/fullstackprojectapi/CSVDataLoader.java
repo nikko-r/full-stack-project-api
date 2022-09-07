@@ -14,6 +14,9 @@ public class CSVDataLoader {
             data.add(sc.nextLine().replaceAll(",",";"));
         }
         System.out.println(data.toArray()[data.toArray().length-1]);
+
+
+
         sc.close();
     }
 }

@@ -1,4 +1,4 @@
 package com.example.fullstackprojectapi;
 
-public class CSVDataRepository {
+public class FullStackProjectApiService {
 }
