@@ -1,12 +1,23 @@
 package com.example.fullstackprojectapi;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.time.LocalDateTime;
+import java.util.List;
 
+@Entity
+@Table (name="csvdata")
 public class CSVData {
 
-    public CSVData(LocalDateTime dateTime, float mRh, int cpm, int _1s, int _2s, int _3s, int _4s, int _5s, int _6s, int _7s, int _8s, int _9s, int _10s, int _11s, int _12s, int _13s, int _14s, int _15s, int _16s, int _17s, int _18s, int _19s, int _20s, int _21s, int _22s, int _23s, int _24s, int _25s, int _26s, int _27s, int _28s, int _29s, int _30s, int _31s, int _32s, int _33s, int _34s, int _35s, int _36s, int _37s, int _38s, int _39s, int _40s, int _41s, int _42s, int _43s, int _44s, int _45s, int _46s, int _47s, int _48s, int _49s, int _50s, int _51s, int _52s, int _53s, int _54s, int _55s, int _56s, int _57s, int _58s, int _59s, int _60s) {
+    public CSVData() {}
+
+    public CSVData(Long id, LocalDateTime dateTime, float mrh, int cpm, int _1s, int _2s, int _3s, int _4s, int _5s, int _6s, int _7s, int _8s, int _9s, int _10s, int _11s, int _12s, int _13s, int _14s, int _15s, int _16s, int _17s, int _18s, int _19s, int _20s, int _21s, int _22s, int _23s, int _24s, int _25s, int _26s, int _27s, int _28s, int _29s, int _30s, int _31s, int _32s, int _33s, int _34s, int _35s, int _36s, int _37s, int _38s, int _39s, int _40s, int _41s, int _42s, int _43s, int _44s, int _45s, int _46s, int _47s, int _48s, int _49s, int _50s, int _51s, int _52s, int _53s, int _54s, int _55s, int _56s, int _57s, int _58s, int _59s, int _60s) {
+        this.id = id;
         this.dateTime = dateTime;
-        this.mRh = mRh;
+        this.mrh = mrh;
         this.cpm = cpm;
         this._1s = _1s;
         this._2s = _2s;
@@ -69,11 +80,17 @@ public class CSVData {
         this._59s = _59s;
         this._60s = _60s;
     }
+
+    @Id
+    private Long id;
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
     private LocalDateTime dateTime;
     public LocalDateTime getDateTime() { return dateTime; }
 
-    private float mRh;
-    public float getmRh() { return mRh; }
+    private float mrh;
+    public float getMrh() { return mrh; }
 
     private int cpm;
     public int getCpm() { return cpm; }

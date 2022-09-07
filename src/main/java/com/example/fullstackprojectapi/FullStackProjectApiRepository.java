@@ -1,9 +1,13 @@
 package com.example.fullstackprojectapi;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface FullStackProjectApiRepository extends JpaRepository<>{
+import javax.transaction.Transactional;
 
-    String insertDataToSQLFromCSV
+@Repository
+@Transactional
+public interface FullStackProjectApiRepository extends JpaRepository<CSVData, Long> {
+
+
 }
